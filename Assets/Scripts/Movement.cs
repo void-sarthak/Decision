@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed = 5f;
+    public float zLimit = -50f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class Movement : MonoBehaviour
     {
         transform.Translate(-Vector3.forward *  speed * Time.deltaTime);
 
-        if(transform.position.z < -50f)
+        if(transform.position.z < zLimit)
         {
             Destroy(gameObject);
         }
